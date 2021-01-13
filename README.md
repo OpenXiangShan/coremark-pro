@@ -1,3 +1,10 @@
+To compile binaries, run 
+```
+make TARGET=linux64 TOOLCHAIN=riscv64-linux-gnu-gcc
+```
+The built binaries are located at builds/linux64/riscv64-linux-gnu-gcc/bin/ .
+The binaries can be run directly using command line, and "-i$(NUMBER OF ITERATIONS)" can be used to set the number of iterations. 
+
 # About
 
 CoreMark®-PRO is a comprehensive, advanced processor benchmark that works with and enhances the market-proven industry-standard EEMBC CoreMark® benchmark. While CoreMark stresses the CPU pipeline, CoreMark-PRO tests the entire processor, adding comprehensive support for multicore technology, a combination of integer and floating-point workloads, and data sets for utilizing larger memory subsystems. Together, EEMBC CoreMark and CoreMark-PRO provide a standard benchmark covering the spectrum from low-end microcontrollers to high-performance computing processors.

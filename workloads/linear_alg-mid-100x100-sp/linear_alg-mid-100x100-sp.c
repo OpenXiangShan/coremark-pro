@@ -68,7 +68,7 @@ int main(int argc, char *argv[])
 	workload->rev_M=1;
 	workload->rev_m=1;
 	workload->uid=1046644201;
-	workload->iterations=50;
+	workload->iterations=1; /* Iterations are changed here, original is 50 */
 
 	/* parse command line for overrides
 	   overrides for num_iterations, num_contexts,

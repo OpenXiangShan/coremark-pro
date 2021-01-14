@@ -21,7 +21,7 @@ Please refer to LICENSE.md for the specific license agreement that pertains to t
 #include "mith_sync.h"
 #include "mith_workload.h"
 
-e_u32 verify_output=1;
+e_u32 verify_output=0; /* Default not to verify */
 e_u32 reporting_threshold=TH_INFO;
 
 int mith_report_results(ee_workload *workload, size_t total_time, e_u32 num_contexts, unsigned int num_workers);

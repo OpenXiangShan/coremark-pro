@@ -1,9 +1,10 @@
 To compile binaries, run 
 ```
-make TARGET=linux64 TOOLCHAIN=riscv64-linux-gnu-gcc
+make TARGET=linux64 TOOLCHAIN=riscv64-linux-gnu-gcc build
 ```
 The built binaries are located at builds/linux64/riscv64-linux-gnu-gcc/bin/ .
 The binaries can be run directly using command line, and "-i$(NUMBER OF ITERATIONS)" can be used to set the number of iterations. 
+Now the default number of itertions are set to 1. To change them, edit .c files in workloads/ .
 
 # About
 

@@ -3,8 +3,11 @@ To compile binaries, run
 make TARGET=linux64 TOOLCHAIN=riscv64-linux-gnu-gcc build
 ```
 The built binaries are located at builds/linux64/riscv64-linux-gnu-gcc/bin/ .
+Currently, building on the server in this way causes errors. Prebuilt binaries are provided in ready-to-run/ .
+All except core and cjpeg can be runned successfully in linux. librt.so.1 need to be included. 
 The binaries can be run directly using command line, and "-i$(NUMBER OF ITERATIONS)" can be used to set the number of iterations. 
 Now the default number of itertions are set to 1. To change them, edit .c files in workloads/ .
+Radix and linear are the fastest fp benchmarks.
 
 # About
 

@@ -1,0 +1,68 @@
+dir /bin 755 0 0
+dir /etc 755 0 0
+dir /dev 755 0 0
+dir /lib 755 0 0
+dir /proc 755 0 0
+dir /sbin 755 0 0
+dir /sys 755 0 0
+dir /tmp 755 0 0
+dir /usr 755 0 0
+dir /mnt 755 0 0
+dir /usr/bin 755 0 0
+dir /usr/lib 755 0 0
+dir /usr/sbin 755 0 0
+dir /var 755 0 0
+dir /var/tmp 755 0 0
+dir /root 755 0 0
+dir /var/log 755 0 0
+
+nod /dev/console 644 0 0 c 5 1
+nod /dev/null 644 0 0 c 1 3
+
+file /lib/ld-linux-riscv64-lp64d.so.1 ${RISCV}/sysroot/lib/ld-linux-riscv64-lp64d.so.1 755 0 0
+file /lib/libc.so.6 ${RISCV}/sysroot/lib/libc.so.6 755 0 0
+#file /lib/libresolv.so.2 ${RISCV}/sysroot/lib/libresolv.so.2 755 0 0
+file /lib/libm.so.6 ${RISCV}/sysroot/lib/libm.so.6 755 0 0
+#file /lib/libdl.so.2 ${RISCV}/sysroot/lib/libdl.so.2 755 0 0
+file /lib/libpthread.so.0 ${RISCV}/sysroot/lib/libpthread.so.0 755 0 0
+file /lib/librt.so.1 ${RISCV}/sysroot/lib/librt.so.1 755 0 0
+
+# for emu
+#file /hello ${RISCV_ROOTFS_HOME}/rootfsimg/build/hello 755 0 0
+#file /coremark ${RISCV_ROOTFS_HOME}/rootfsimg/build/coremark 755 0 0
+#file /parser-125k.exe ${RISCV_ROOTFS_HOME}/rootfsimg/build/parser-125k.exe 755 0 0
+#file /linear_alg-mid-100x100-sp.exe ${RISCV_ROOTFS_HOME}/rootfsimg/build/linear_alg-mid-100x100-sp.exe 755 0 0
+#file /loops-all-mid-10k-sp.exe ${RISCV_ROOTFS_HOME}/rootfsimg/build/loops-all-mid-10k-sp.exe 755 0 0
+#file /nnet_test.exe ${RISCV_ROOTFS_HOME}/rootfsimg/build/nnet_test.exe 755 0 0
+#file /nnet_test.exe ${RISCV_ROOTFS_HOME}/rootfsimg/build/nnet_test.exe 755 0 0
+#file /parser-125k.exe ${RISCV_ROOTFS_HOME}/rootfsimg/build/parser-125k.exe 755 0 0
+file /radix2-big-64k.exe ${RISCV_ROOTFS_HOME}/rootfsimg/build/radix2-big-64k.exe 755 0 0
+#file /sha-test.exe ${RISCV_ROOTFS_HOME}/rootfsimg/build/sha-test.exe 755 0 0
+#file /zip-test.exe ${RISCV_ROOTFS_HOME}/rootfsimg/build/zip-test.exe 755 0 0
+#file /stream ${RISCV_ROOTFS_HOME}/rootfsimg/build/stream 755 0 0
+#file /stream ${RISCV_ROOTFS_HOME}/rootfsimg/build/stream 755 0 0
+#file /stream ${RISCV_ROOTFS_HOME}/rootfsimg/build/stream 755 0 0
+#file /stream ${RISCV_ROOTFS_HOME}/rootfsimg/build/stream 755 0 0
+#file /stream ${RISCV_ROOTFS_HOME}/rootfsimg/build/stream 755 0 0
+#file /stream ${RISCV_ROOTFS_HOME}/rootfsimg/build/stream 755 0 0
+#file /stream ${RISCV_ROOTFS_HOME}/rootfsimg/build/stream 755 0 0
+#file /redis ${RISCV_ROOTFS_HOME}/rootfsimg/build/redis-server 755 0 0
+#file /bin/busybox ${RISCV_ROOTFS_HOME}/rootfsimg/build/busybox 755 0 0
+#file /etc/inittab ${RISCV_ROOTFS_HOME}/rootfsimg/inittab 755 0 0
+#slink /init /bin/busybox 755 0 0
+#slink /init /parser-125k.exe 755 0 0
+#slink /init /linear_alg-mid-100x100-sp.exe 755 0 0
+#slink /init /loops-all-mid-10k-sp.exe 755 0 0
+#slink /init /nnet_test.exe 755 0 0
+#slink /init /parser-125k.exe 755 0 0
+slink /init /radix2-big-64k.exe 755 0 0
+#slink /init /sha-test.exe 755 0 0
+#slink /init /zip-test.exe 755 0 0
+
+
+
+
+
+
+#file /root/cas-logo.txt ${RISCV_ROOTFS_HOME}/rootfsimg/scripts/cas-logo.txt 755 0 0
+#file /root/ysyx-logo.txt ${RISCV_ROOTFS_HOME}/rootfsimg/scripts/ysyx-logo.txt 755 0 0

@@ -274,8 +274,8 @@ Disassembly of section .text:
     800003bc:	62b010ef          	jal	ra,800021e6 <enter_supervisor_mode>
     800003c0:	607010ef          	jal	ra,800021c6 <setup_pmp>
     800003c4:	bff1                	j	800003a0 <boot_other_hart+0xb0>
-    800003c6:	00998797          	auipc	a5,0x998
-    800003ca:	06e78793          	addi	a5,a5,110 # 80998434 <_payload_end>
+    800003c6:	00706797          	auipc	a5,0x706
+    800003ca:	9de78793          	addi	a5,a5,-1570 # 80705da4 <_payload_end>
     800003ce:	bff1                	j	800003aa <boot_other_hart+0xba>
 
 00000000800003d0 <boot_loader>:
@@ -323,8 +323,8 @@ Disassembly of section .text:
     8000044c:	00013717          	auipc	a4,0x13
     80000450:	baf73a23          	sd	a5,-1100(a4) # 80013000 <entry_point>
     80000454:	e9dff0ef          	jal	ra,800002f0 <boot_other_hart>
-    80000458:	00998417          	auipc	s0,0x998
-    8000045c:	fdc40413          	addi	s0,s0,-36 # 80998434 <_payload_end>
+    80000458:	00706417          	auipc	s0,0x706
+    8000045c:	94c40413          	addi	s0,s0,-1716 # 80705da4 <_payload_end>
     80000460:	b759                	j	800003e6 <boot_loader+0x16>
     80000462:	00200797          	auipc	a5,0x200
     80000466:	b9e78793          	addi	a5,a5,-1122 # 80200000 <_payload_start>
@@ -390,7 +390,7 @@ Disassembly of section .text:
     800004f0:	ff010537          	lui	a0,0xff010
     800004f4:	00ff05b7          	lui	a1,0xff0
     800004f8:	9636                	add	a2,a2,a3
-    800004fa:	f0050513          	addi	a0,a0,-256 # ffffffffff00ff00 <_payload_end+0xffffffff7e677acc>
+    800004fa:	f0050513          	addi	a0,a0,-256 # ffffffffff00ff00 <_payload_end+0xffffffff7e90a15c>
     800004fe:	0ff58593          	addi	a1,a1,255 # ff00ff <MEM_START-0x7f00ff01>
     80000502:	482d                	li	a6,11
     80000504:	58fd                	li	a7,-1
@@ -483,7 +483,7 @@ Disassembly of section .text:
     800005de:	6291                	lui	t0,0x4
     800005e0:	00ffffb3          	and	t6,t6,a5
     800005e4:	9342                	add	t1,t1,a6
-    800005e6:	f00e8e93          	addi	t4,t4,-256 # ffffffffff00ff00 <_payload_end+0xffffffff7e677acc>
+    800005e6:	f00e8e93          	addi	t4,t4,-256 # ffffffffff00ff00 <_payload_end+0xffffffff7e90a15c>
     800005ea:	0ffe0e13          	addi	t3,t3,255 # ff00ff <MEM_START-0x7f00ff01>
     800005ee:	4521                	li	a0,8
     800005f0:	92fa                	add	t0,t0,t5
@@ -518,7 +518,7 @@ Disassembly of section .text:
     80000646:	407787b3          	sub	a5,a5,t2
     8000064a:	07b2                	slli	a5,a5,0xc
     8000064c:	0018971b          	slliw	a4,a7,0x1
-    80000650:	fc078793          	addi	a5,a5,-64 # ffffffffffffefc0 <_payload_end+0xffffffff7f666b8c>
+    80000650:	fc078793          	addi	a5,a5,-64 # ffffffffffffefc0 <_payload_end+0xffffffff7f8f921c>
     80000654:	97fe                	add	a5,a5,t6
     80000656:	01e886b3          	add	a3,a7,t5
     8000065a:	9716                	add	a4,a4,t0
@@ -622,7 +622,7 @@ Disassembly of section .text:
     80000784:	004b1c1b          	slliw	s8,s6,0x4
     80000788:	94a2                	add	s1,s1,s0
     8000078a:	009b1b1b          	slliw	s6,s6,0x9
-    8000078e:	f0098993          	addi	s3,s3,-256 # ffffffffff00ff00 <_payload_end+0xffffffff7e677acc>
+    8000078e:	f0098993          	addi	s3,s3,-256 # ffffffffff00ff00 <_payload_end+0xffffffff7e90a15c>
     80000792:	0ff90913          	addi	s2,s2,255 # ff00ff <MEM_START-0x7f00ff01>
     80000796:	00fafab3          	and	s5,s5,a5
     8000079a:	f1402bf3          	csrr	s7,mhartid
@@ -805,7 +805,7 @@ Disassembly of section .text:
     800009c4:	050a                	slli	a0,a0,0x2
     800009c6:	058a                	slli	a1,a1,0x2
     800009c8:	4e81                	li	t4,0
-    800009ca:	f0060613          	addi	a2,a2,-256 # ffffffffff00ff00 <_payload_end+0xffffffff7e677acc>
+    800009ca:	f0060613          	addi	a2,a2,-256 # ffffffffff00ff00 <_payload_end+0xffffffff7e90a15c>
     800009ce:	0ff68693          	addi	a3,a3,255 # ff00ff <MEM_START-0x7f00ff01>
     800009d2:	08605b63          	blez	t1,80000a68 <mem_done+0x116>
     800009d6:	00a28433          	add	s0,t0,a0
@@ -1005,7 +1005,7 @@ Disassembly of section .text:
     80000be0:	e535                	bnez	a0,80000c4c <hart_prop+0xf8>
     80000be2:	681c                	ld	a5,16(s0)
     80000be4:	ff0106b7          	lui	a3,0xff010
-    80000be8:	f0068693          	addi	a3,a3,-256 # ffffffffff00ff00 <_payload_end+0xffffffff7e677acc>
+    80000be8:	f0068693          	addi	a3,a3,-256 # ffffffffff00ff00 <_payload_end+0xffffffff7e90a15c>
     80000bec:	4398                	lw	a4,0(a5)
     80000bee:	0087179b          	slliw	a5,a4,0x8
     80000bf2:	8ff5                	and	a5,a5,a3
@@ -1021,7 +1021,7 @@ Disassembly of section .text:
     80000c10:	b75d                	j	80000bb6 <hart_prop+0x62>
     80000c12:	681c                	ld	a5,16(s0)
     80000c14:	ff0106b7          	lui	a3,0xff010
-    80000c18:	f0068693          	addi	a3,a3,-256 # ffffffffff00ff00 <_payload_end+0xffffffff7e677acc>
+    80000c18:	f0068693          	addi	a3,a3,-256 # ffffffffff00ff00 <_payload_end+0xffffffff7e90a15c>
     80000c1c:	4398                	lw	a4,0(a5)
     80000c1e:	60e2                	ld	ra,24(sp)
     80000c20:	6442                	ld	s0,16(sp)
@@ -1059,7 +1059,7 @@ Disassembly of section .text:
     80000c76:	ff010837          	lui	a6,0xff010
     80000c7a:	00ff0537          	lui	a0,0xff0
     80000c7e:	95b2                	add	a1,a1,a2
-    80000c80:	f0080813          	addi	a6,a6,-256 # ffffffffff00ff00 <_payload_end+0xffffffff7e677acc>
+    80000c80:	f0080813          	addi	a6,a6,-256 # ffffffffff00ff00 <_payload_end+0xffffffff7e90a15c>
     80000c84:	0ff50513          	addi	a0,a0,255 # ff00ff <MEM_START-0x7f00ff01>
     80000c88:	4218                	lw	a4,0(a2)
     80000c8a:	02079693          	slli	a3,a5,0x20
@@ -1143,7 +1143,7 @@ Disassembly of section .text:
     80000d64:	ff010837          	lui	a6,0xff010
     80000d68:	00ff0537          	lui	a0,0xff0
     80000d6c:	95b2                	add	a1,a1,a2
-    80000d6e:	f0080813          	addi	a6,a6,-256 # ffffffffff00ff00 <_payload_end+0xffffffff7e677acc>
+    80000d6e:	f0080813          	addi	a6,a6,-256 # ffffffffff00ff00 <_payload_end+0xffffffff7e90a15c>
     80000d72:	0ff50513          	addi	a0,a0,255 # ff00ff <MEM_START-0x7f00ff01>
     80000d76:	4218                	lw	a4,0(a2)
     80000d78:	02079693          	slli	a3,a5,0x20
@@ -1219,7 +1219,7 @@ Disassembly of section .text:
     80000e1e:	f832                	sd	a2,48(sp)
     80000e20:	4d01                	li	s10,0
     80000e22:	0ff48493          	addi	s1,s1,255 # ff00ff <MEM_START-0x7f00ff01>
-    80000e26:	f0040413          	addi	s0,s0,-256 # ffffffffff00ff00 <_payload_end+0xffffffff7e677acc>
+    80000e26:	f0040413          	addi	s0,s0,-256 # ffffffffff00ff00 <_payload_end+0xffffffff7e90a15c>
     80000e2a:	4c8d                	li	s9,3
     80000e2c:	00006a97          	auipc	s5,0x6
     80000e30:	0eca8a93          	addi	s5,s5,236 # 80006f18 <softfloat_countLeadingZeros8+0x3a0>
@@ -1592,7 +1592,7 @@ Disassembly of section .text:
     80001256:	00ff0537          	lui	a0,0xff0
     8000125a:	95b2                	add	a1,a1,a2
     8000125c:	4781                	li	a5,0
-    8000125e:	f0080813          	addi	a6,a6,-256 # ffffffffff00ff00 <_payload_end+0xffffffff7e677acc>
+    8000125e:	f0080813          	addi	a6,a6,-256 # ffffffffff00ff00 <_payload_end+0xffffffff7e90a15c>
     80001262:	0ff50513          	addi	a0,a0,255 # ff00ff <MEM_START-0x7f00ff01>
     80001266:	4218                	lw	a4,0(a2)
     80001268:	02079693          	slli	a3,a5,0x20
@@ -1635,7 +1635,7 @@ Disassembly of section .text:
     800012cc:	00ff0537          	lui	a0,0xff0
     800012d0:	95b2                	add	a1,a1,a2
     800012d2:	4781                	li	a5,0
-    800012d4:	f0080813          	addi	a6,a6,-256 # ffffffffff00ff00 <_payload_end+0xffffffff7e677acc>
+    800012d4:	f0080813          	addi	a6,a6,-256 # ffffffffff00ff00 <_payload_end+0xffffffff7e90a15c>
     800012d8:	0ff50513          	addi	a0,a0,255 # ff00ff <MEM_START-0x7f00ff01>
     800012dc:	4218                	lw	a4,0(a2)
     800012de:	02079693          	slli	a3,a5,0x20
@@ -1673,7 +1673,7 @@ Disassembly of section .text:
     8000132c:	0087579b          	srliw	a5,a4,0x8
     80001330:	0ff60613          	addi	a2,a2,255 # ff00ff <MEM_START-0x7f00ff01>
     80001334:	0087171b          	slliw	a4,a4,0x8
-    80001338:	f0080813          	addi	a6,a6,-256 # ffffffffff00ff00 <_payload_end+0xffffffff7e677acc>
+    80001338:	f0080813          	addi	a6,a6,-256 # ffffffffff00ff00 <_payload_end+0xffffffff7e90a15c>
     8000133c:	01077733          	and	a4,a4,a6
     80001340:	8ff1                	and	a5,a5,a2
     80001342:	8fd9                	or	a5,a5,a4
@@ -1682,7 +1682,7 @@ Disassembly of section .text:
     8000134c:	8fd9                	or	a5,a5,a4
     8000134e:	d00e0737          	lui	a4,0xd00e0
     80001352:	2781                	sext.w	a5,a5
-    80001354:	eed70713          	addi	a4,a4,-275 # ffffffffd00dfeed <_payload_end+0xffffffff4f747ab9>
+    80001354:	eed70713          	addi	a4,a4,-275 # ffffffffd00dfeed <_payload_end+0xffffffff4f9da149>
     80001358:	02e79463          	bne	a5,a4,80001380 <fdt_scan+0x5e>
     8000135c:	4d18                	lw	a4,24(a0)
     8000135e:	46c5                	li	a3,17
@@ -1730,7 +1730,7 @@ Disassembly of section .text:
     800013da:	ff010637          	lui	a2,0xff010
     800013de:	00ff06b7          	lui	a3,0xff0
     800013e2:	0087179b          	slliw	a5,a4,0x8
-    800013e6:	f0060613          	addi	a2,a2,-256 # ffffffffff00ff00 <_payload_end+0xffffffff7e677acc>
+    800013e6:	f0060613          	addi	a2,a2,-256 # ffffffffff00ff00 <_payload_end+0xffffffff7e90a15c>
     800013ea:	0087571b          	srliw	a4,a4,0x8
     800013ee:	0ff68693          	addi	a3,a3,255 # ff00ff <MEM_START-0x7f00ff01>
     800013f2:	8f75                	and	a4,a4,a3
@@ -1741,7 +1741,7 @@ Disassembly of section .text:
     80001400:	8fd9                	or	a5,a5,a4
     80001402:	d00e0737          	lui	a4,0xd00e0
     80001406:	2781                	sext.w	a5,a5
-    80001408:	eed70713          	addi	a4,a4,-275 # ffffffffd00dfeed <_payload_end+0xffffffff4f747ab9>
+    80001408:	eed70713          	addi	a4,a4,-275 # ffffffffd00dfeed <_payload_end+0xffffffff4f9da149>
     8000140c:	85aa                	mv	a1,a0
     8000140e:	04e79363          	bne	a5,a4,80001454 <fdt_size+0x7c>
     80001412:	4d18                	lw	a4,24(a0)
@@ -1785,7 +1785,7 @@ Disassembly of section .text:
     8000147a:	98ae                	add	a7,a7,a1
     8000147c:	882e                	mv	a6,a1
     8000147e:	4781                	li	a5,0
-    80001480:	f00e8e93          	addi	t4,t4,-256 # ffffffffff00ff00 <_payload_end+0xffffffff7e677acc>
+    80001480:	f00e8e93          	addi	t4,t4,-256 # ffffffffff00ff00 <_payload_end+0xffffffff7e90a15c>
     80001484:	0ffe0e13          	addi	t3,t3,255 # ff00ff <MEM_START-0x7f00ff01>
     80001488:	00082703          	lw	a4,0(a6)
     8000148c:	02079693          	slli	a3,a5,0x20
@@ -1824,7 +1824,7 @@ Disassembly of section .text:
     800014ea:	98ae                	add	a7,a7,a1
     800014ec:	882e                	mv	a6,a1
     800014ee:	4781                	li	a5,0
-    800014f0:	f00e8e93          	addi	t4,t4,-256 # ffffffffff00ff00 <_payload_end+0xffffffff7e677acc>
+    800014f0:	f00e8e93          	addi	t4,t4,-256 # ffffffffff00ff00 <_payload_end+0xffffffff7e90a15c>
     800014f4:	0ffe0e13          	addi	t3,t3,255 # ff00ff <MEM_START-0x7f00ff01>
     800014f8:	00082703          	lw	a4,0(a6)
     800014fc:	02079693          	slli	a3,a5,0x20
@@ -1856,7 +1856,7 @@ Disassembly of section .text:
     8000153e:	95be                	add	a1,a1,a5
     80001540:	4198                	lw	a4,0(a1)
     80001542:	ff010537          	lui	a0,0xff010
-    80001546:	f0050513          	addi	a0,a0,-256 # ffffffffff00ff00 <_payload_end+0xffffffff7e677acc>
+    80001546:	f0050513          	addi	a0,a0,-256 # ffffffffff00ff00 <_payload_end+0xffffffff7e90a15c>
     8000154a:	0087179b          	slliw	a5,a4,0x8
     8000154e:	8fe9                	and	a5,a5,a0
     80001550:	00ff0537          	lui	a0,0xff0
@@ -1961,7 +1961,7 @@ Disassembly of section .text:
     80001642:	00ff0537          	lui	a0,0xff0
     80001646:	95b6                	add	a1,a1,a3
     80001648:	4781                	li	a5,0
-    8000164a:	f0080813          	addi	a6,a6,-256 # ffffffffff00ff00 <_payload_end+0xffffffff7e677acc>
+    8000164a:	f0080813          	addi	a6,a6,-256 # ffffffffff00ff00 <_payload_end+0xffffffff7e90a15c>
     8000164e:	0ff50513          	addi	a0,a0,255 # ff00ff <MEM_START-0x7f00ff01>
     80001652:	4298                	lw	a4,0(a3)
     80001654:	02079613          	slli	a2,a5,0x20
@@ -1997,7 +1997,7 @@ Disassembly of section .text:
     800016aa:	f979                	bnez	a0,80001680 <clint_prop+0xb2>
     800016ac:	689c                	ld	a5,16(s1)
     800016ae:	ff0106b7          	lui	a3,0xff010
-    800016b2:	f0068693          	addi	a3,a3,-256 # ffffffffff00ff00 <_payload_end+0xffffffff7e677acc>
+    800016b2:	f0068693          	addi	a3,a3,-256 # ffffffffff00ff00 <_payload_end+0xffffffff7e90a15c>
     800016b6:	4398                	lw	a4,0(a5)
     800016b8:	60e2                	ld	ra,24(sp)
     800016ba:	64a2                	ld	s1,8(sp)
@@ -2077,7 +2077,7 @@ Disassembly of section .text:
     8000177a:	00ff0537          	lui	a0,0xff0
     8000177e:	95b6                	add	a1,a1,a3
     80001780:	4781                	li	a5,0
-    80001782:	f0080813          	addi	a6,a6,-256 # ffffffffff00ff00 <_payload_end+0xffffffff7e677acc>
+    80001782:	f0080813          	addi	a6,a6,-256 # ffffffffff00ff00 <_payload_end+0xffffffff7e90a15c>
     80001786:	0ff50513          	addi	a0,a0,255 # ff00ff <MEM_START-0x7f00ff01>
     8000178a:	4298                	lw	a4,0(a3)
     8000178c:	02079613          	slli	a2,a5,0x20
@@ -2113,7 +2113,7 @@ Disassembly of section .text:
     800017e2:	f979                	bnez	a0,800017b8 <plic_prop+0xb2>
     800017e4:	689c                	ld	a5,16(s1)
     800017e6:	ff0106b7          	lui	a3,0xff010
-    800017ea:	f0068693          	addi	a3,a3,-256 # ffffffffff00ff00 <_payload_end+0xffffffff7e677acc>
+    800017ea:	f0068693          	addi	a3,a3,-256 # ffffffffff00ff00 <_payload_end+0xffffffff7e90a15c>
     800017ee:	4398                	lw	a4,0(a5)
     800017f0:	0087179b          	slliw	a5,a4,0x8
     800017f4:	8ff5                	and	a5,a5,a3
@@ -2436,7 +2436,7 @@ Disassembly of section .text:
     80001b40:	8a05                	andi	a2,a2,1
     80001b42:	97aa                	add	a5,a5,a0
     80001b44:	f26d                	bnez	a2,80001b26 <send_ipi_many+0x42>
-    80001b46:	fc878613          	addi	a2,a5,-56 # ffffffffffffefc8 <_payload_end+0xffffffff7f666b94>
+    80001b46:	fc878613          	addi	a2,a5,-56 # ffffffffffffefc8 <_payload_end+0xffffffff7f8f9224>
     80001b4a:	0f50000f          	fence	iorw,ow
     80001b4e:	4516202f          	amoor.w.aq	zero,a7,(a2)
     80001b52:	0ff0000f          	fence
@@ -2464,7 +2464,7 @@ Disassembly of section .text:
     80001b8e:	406707b3          	sub	a5,a4,t1
     80001b92:	07b2                	slli	a5,a5,0xc
     80001b94:	97aa                	add	a5,a5,a0
-    80001b96:	fc07b783          	ld	a5,-64(a5) # ffffffffffffefc0 <_payload_end+0xffffffff7f666b8c>
+    80001b96:	fc07b783          	ld	a5,-64(a5) # ffffffffffffefc0 <_payload_end+0xffffffff7f8f921c>
     80001b9a:	439c                	lw	a5,0(a5)
     80001b9c:	2781                	sext.w	a5,a5
     80001b9e:	d3e5                	beqz	a5,80001b7e <send_ipi_many+0x9a>
@@ -2983,7 +2983,7 @@ Disassembly of section .text:
     8000214a:	97b2                	add	a5,a5,a2
     8000214c:	0705                	addi	a4,a4,1
     8000214e:	c689                	beqz	a3,80002158 <init_first_hart+0xe0>
-    80002150:	fc07b783          	ld	a5,-64(a5) # ffffffffffffefc0 <_payload_end+0xffffffff7f666b8c>
+    80002150:	fc07b783          	ld	a5,-64(a5) # ffffffffffffefc0 <_payload_end+0xffffffff7f8f921c>
     80002154:	0117a023          	sw	a7,0(a5)
     80002158:	ff0713e3          	bne	a4,a6,8000213e <init_first_hart+0xc6>
     8000215c:	00011797          	auipc	a5,0x11
@@ -3044,7 +3044,7 @@ Disassembly of section .text:
     800021ec:	30002773          	csrr	a4,mstatus
     800021f0:	7679                	lui	a2,0xffffe
     800021f2:	6785                	lui	a5,0x1
-    800021f4:	77f60613          	addi	a2,a2,1919 # ffffffffffffe77f <_payload_end+0xffffffff7f66634b>
+    800021f4:	77f60613          	addi	a2,a2,1919 # ffffffffffffe77f <_payload_end+0xffffffff7f8f89db>
     800021f8:	8f71                	and	a4,a4,a2
     800021fa:	80078613          	addi	a2,a5,-2048 # 800 <MEM_START-0x7ffff800>
     800021fe:	8f51                	or	a4,a4,a2
@@ -4462,7 +4462,7 @@ Disassembly of section .text:
     800030ae:	972a                	add	a4,a4,a0
     800030b0:	97aa                	add	a5,a5,a0
     800030b2:	10073583          	ld	a1,256(a4)
-    800030b6:	1007b503          	ld	a0,256(a5) # ffffffff80000100 <_payload_end+0xfffffffeff667ccc>
+    800030b6:	1007b503          	ld	a0,256(a5) # ffffffff80000100 <_payload_end+0xfffffffeff8fa35c>
     800030ba:	8011                	srli	s0,s0,0x4
     800030bc:	0f847413          	andi	s0,s0,248
     800030c0:	78a010ef          	jal	ra,8000484a <f64_mul>
@@ -5075,7 +5075,7 @@ Disassembly of section .text:
     80003720:	97aa                	add	a5,a5,a0
     80003722:	972a                	add	a4,a4,a0
     80003724:	4685                	li	a3,1
-    80003726:	1007a983          	lw	s3,256(a5) # ffffffff80000100 <_payload_end+0xfffffffeff667ccc>
+    80003726:	1007a983          	lw	s3,256(a5) # ffffffff80000100 <_payload_end+0xfffffffeff8fa35c>
     8000372a:	10072a03          	lw	s4,256(a4)
     8000372e:	02d91663          	bne	s2,a3,8000375a <emulate_fcmp+0x8a>
     80003732:	85d2                	mv	a1,s4
@@ -5261,7 +5261,7 @@ Disassembly of section .text:
     80003926:	96a6                	add	a3,a3,s1
     80003928:	97a6                	add	a5,a5,s1
     8000392a:	1006a583          	lw	a1,256(a3)
-    8000392e:	1007a603          	lw	a2,256(a5) # ffffffff80000100 <_payload_end+0xfffffffeff667ccc>
+    8000392e:	1007a603          	lw	a2,256(a5) # ffffffff80000100 <_payload_end+0xfffffffeff8fa35c>
     80003932:	2501                	sext.w	a0,a0
     80003934:	c709                	beqz	a4,8000393e <emulate_fmadd+0x82>
     80003936:	800007b7          	lui	a5,0x80000
@@ -7917,7 +7917,7 @@ Disassembly of section .text:
     80005628:	02d50863          	beq	a0,a3,80005658 <softfloat_negXM+0x3a>
     8000562c:	ffe5061b          	addiw	a2,a0,-2
     80005630:	1602                	slli	a2,a2,0x20
-    80005632:	00858793          	addi	a5,a1,8 # ffffffff80000008 <_payload_end+0xfffffffeff667bd4>
+    80005632:	00858793          	addi	a5,a1,8 # ffffffff80000008 <_payload_end+0xfffffffeff8fa264>
     80005636:	8279                	srli	a2,a2,0x1e
     80005638:	0591                	addi	a1,a1,4
     8000563a:	963e                	add	a2,a2,a5
@@ -8052,7 +8052,7 @@ Disassembly of section .text:
     80005782:	0076561b          	srliw	a2,a2,0x7
     80005786:	cf89                	beqz	a5,800057a0 <softfloat_roundPackToF32+0x82>
     80005788:	00126213          	ori	tp,tp,1
-    8000578c:	fc078793          	addi	a5,a5,-64 # ffffffff7fffffc0 <_payload_end+0xfffffffeff667b8c>
+    8000578c:	fc078793          	addi	a5,a5,-64 # ffffffff7fffffc0 <_payload_end+0xfffffffeff8fa21c>
     80005790:	0014b493          	seqz	s1,s1
     80005794:	0017b793          	seqz	a5,a5
     80005798:	8cfd                	and	s1,s1,a5
